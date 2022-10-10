@@ -21,6 +21,9 @@ function Home() {
           <li>
             <NavLink to="/forms">Hook Form</NavLink>
           </li>
+          <li>
+            <NavLink to="/styled">Styled Components</NavLink>
+          </li>
         </ul>
       </nav>
     </div>
