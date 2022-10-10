@@ -1,25 +1,22 @@
 import React from "react";
-import CallbackHook from "./components/CallbackHook";
-import ContextHook from "./components/ContextHook";
-import ImperativeHandleHook from "./components/ImperativeHandleHook";
-import LayoutEffectHook from "./components/LayoutEffectHook";
-import MemoHook from "./components/MemoHook";
-import ReducerHook from "./components/ReducerHook";
-import RefHook from "./components/RefHook";
-import StateAndEffectHook from "./components/StateAndEffectHook";
+import { Route, Routes } from "react-router-dom";
+import Home from "./pages/Home";
+import Hooks from "./pages/Hooks";
+import NotFound from "./pages/NotFound";
+import Query from "./pages/Query";
+import Router from "./pages/Router";
 
 function App() {
   return (
-    <div className="App">
-      <StateAndEffectHook />
-      <RefHook />
-      <LayoutEffectHook />
-      <MemoHook />
-      <CallbackHook />
-      <ContextHook /> 
-      <ReducerHook /> 
-      <ImperativeHandleHook />
-    </div>
+    <>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/router/*" element={<Router />} />
+        <Route path="/hooks" element={<Hooks />} />
+        <Route path="/queries" element={<Query />} />
+        <Route path="*" element={<NotFound />} />
+      </Routes>
+    </>
   );
 }
 
